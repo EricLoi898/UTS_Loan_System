@@ -20,7 +20,7 @@ namespace UTS_Loan_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Desktop\UTS_Loan_System\Database\Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Anthony\source\repos\UTS_Loan_System\Database\Database.mdf;Integrated Security=True;Connect Timeout=30");
             string query = "Select * from Users Where id = '" + textBox1.Text.Trim() + "' and password = '" + textBox2.Text.Trim() + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtb = new DataTable();

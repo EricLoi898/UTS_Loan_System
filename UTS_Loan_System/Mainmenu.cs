@@ -23,5 +23,11 @@ namespace UTS_Loan_System
         {
             this.Close();
         }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            ApplyLoan applyLoan = new ApplyLoan();
+            applyLoan.Show();
+        }
     }
 }
