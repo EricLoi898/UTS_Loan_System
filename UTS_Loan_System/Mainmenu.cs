@@ -19,7 +19,31 @@ namespace UTS_Loan_System
         {
             InitializeComponent();
             label1.Text = dtb.Rows[0][2].ToString().Trim() + ", " + dtb.Rows[0][3].ToString().Trim();
-             dtb1 = dtb;
+            switch (dtb.Rows[0][4].ToString().Trim())
+            {
+                case ("Student"):
+                    MessageBox.Show("Student");
+                    btnApply.Enabled = btnView.Enabled = true;
+                    btnReview.Enabled = false;
+                    btnReview.Visible = false;
+                    break;
+                case ("Staff Member"):
+                    MessageBox.Show("Staff Member");
+                    btnApply.Enabled = btnView.Enabled = false;
+                    btnApply.Visible = btnView.Visible = false;
+                    btnReview.Enabled = true;
+                    break;
+                case ("Staff Manager"):
+                    MessageBox.Show("Staff Manager");
+                    btnApply.Enabled = btnView.Enabled = false;
+                    btnApply.Visible = btnView.Visible = false;
+                    btnReview.Enabled = true;
+                    break;
+                default:
+                    Console.WriteLine("System error! Please try again!");
+                    break;
+            }
+            dtb1 = dtb;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
