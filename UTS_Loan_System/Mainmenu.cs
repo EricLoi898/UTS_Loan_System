@@ -13,13 +13,15 @@ namespace UTS_Loan_System
 {
     public partial class Mainmenu : Form
     {
-        private DataTable dtb1;
+        //private DataTable dtb1;
+        private User user;
 
-        public Mainmenu(DataTable dtb)
+        public Mainmenu(User loggedUser)
         {
             InitializeComponent();
-            label1.Text = dtb.Rows[0][2].ToString().Trim() + ", " + dtb.Rows[0][3].ToString().Trim();
-            switch (dtb.Rows[0][4].ToString().Trim())
+            user = loggedUser;
+            label1.Text = loggedUser.getFirstname() + ", " + loggedUser.getFullname();
+            switch (loggedUser.getUsertype())
             {
                 case ("Student"):
                     MessageBox.Show("Student");
@@ -43,7 +45,6 @@ namespace UTS_Loan_System
                     Console.WriteLine("System error! Please try again!");
                     break;
             }
-            dtb1 = dtb;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -53,8 +54,18 @@ namespace UTS_Loan_System
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            ApplyLoan applyLoan = new ApplyLoan(dtb1);
+            ApplyLoan applyLoan = new ApplyLoan(user);
             applyLoan.Show();
+        }
+
+        private void btnReview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

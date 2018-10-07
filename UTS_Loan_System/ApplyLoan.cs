@@ -12,12 +12,12 @@ namespace UTS_Loan_System
 {
     public partial class ApplyLoan : Form
     {
-        public ApplyLoan(DataTable dtb)
+        public ApplyLoan(User loggedUser)
         {
             InitializeComponent();
-            lbApplicantID.Text = dtb.Rows[0][0].ToString();
-            lbApplicantfirstname.Text = dtb.Rows[0][2].ToString();
-            lbApplicantlastname.Text = dtb.Rows[0][3].ToString();
+            lbApplicantID.Text = Convert.ToString(loggedUser.getID());//Show student details in the page.
+            lbApplicantfirstname.Text = loggedUser.getFirstname();
+            lbApplicantlastname.Text = loggedUser.getFullname();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

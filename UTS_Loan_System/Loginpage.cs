@@ -29,8 +29,14 @@ namespace UTS_Loan_System
             sda.Fill(dtb);
             if (dtb.Rows.Count == 1)//If a row(user) is found matched in the table
             {
-                        Mainmenu mainmenu = new Mainmenu(dtb);//Create a new menu and pass the table with the user details
-                        mainmenu.Show();//Show the mainmenu
+                int r0 = Convert.ToInt32(dtb.Rows[0][0]);
+                string r1 = dtb.Rows[0][1].ToString().Trim();
+                string r2 = dtb.Rows[0][2].ToString().Trim();
+                string r3 = dtb.Rows[0][3].ToString().Trim();
+                string r4 = dtb.Rows[0][4].ToString().Trim();
+                User loggedUser = new User(r0,r1,r2,r3,r4);//Create a new user object using data from datatable
+                Mainmenu mainmenu = new Mainmenu(loggedUser);//Create a new menu and pass the table with the user details
+                mainmenu.Show();//Show the mainmenu
             }
             else
             {
