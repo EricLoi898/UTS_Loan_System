@@ -26,7 +26,14 @@ namespace UTS_Loan_System
             string query = "Select * from Users Where id = '" + textBox1.Text.Trim() + "' and password = '" + textBox2.Text.Trim() + "'";//Create a SQL query
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);//Execute the above SQL query
             DataTable dtb = new DataTable();
-            sda.Fill(dtb);
+            try
+            {
+                sda.Fill(dtb);
+            }
+            catch(System.Data.SqlClient.SqlException)
+            {
+                MessageBox.Show("Connection to Database failed! Please ensure this device is connected to internet!");
+            }
             if (dtb.Rows.Count == 1)//If a row(user) is found matched in the table
             {
                 int r0 = Convert.ToInt32(dtb.Rows[0][0]);
