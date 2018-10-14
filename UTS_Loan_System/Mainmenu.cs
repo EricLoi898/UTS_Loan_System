@@ -20,7 +20,7 @@ namespace UTS_Loan_System
         {
             InitializeComponent();
             user = loggedUser;
-            label1.Text = loggedUser.getFirstname() + ", " + loggedUser.getFullname();
+            label1.Text = loggedUser.getFullname();
             switch (loggedUser.getUsertype())
             {
                 case ("Student"):

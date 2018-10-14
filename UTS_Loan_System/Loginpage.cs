@@ -52,8 +52,11 @@ namespace UTS_Loan_System
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {           
-            time++;
+        {
+            if (textBox1.Text != "")
+            {
+                time++;
+            }
             if(time > 15)//After 15 seconds
             {
                 time = 0;
