@@ -11,10 +11,10 @@ using System.Data.SqlClient;//Import SQL Database
 
 namespace UTS_Loan_System
 {
-    public partial class Loginpage : Form
+    public partial class Login : Form
     {
         public static int time = 0;
-        public Loginpage()
+        public Login()
         {
 
             InitializeComponent();

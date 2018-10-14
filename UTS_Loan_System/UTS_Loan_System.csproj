@@ -52,11 +52,11 @@
       <DependentUpon>ApplyLoan.cs</DependentUpon>
     </Compile>
     <Compile Include="Loan.cs" />
-    <Compile Include="Loginpage.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Loginpage.Designer.cs">
-      <DependentUpon>Loginpage.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Mainmenu.cs">
       <SubType>Form</SubType>
@@ -82,8 +82,8 @@
     <EmbeddedResource Include="ApplyLoan.resx">
       <DependentUpon>ApplyLoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Loginpage.resx">
-      <DependentUpon>Loginpage.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainmenu.resx">
       <DependentUpon>Mainmenu.cs</DependentUpon>

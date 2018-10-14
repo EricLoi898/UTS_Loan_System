@@ -1,6 +1,6 @@
 ﻿namespace UTS_Loan_System
 {
-    partial class Loginpage
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.

@@ -16,7 +16,7 @@ namespace UTS_Loan_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loginpage());
+            Application.Run(new Login());
         }
     }
 }
