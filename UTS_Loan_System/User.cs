@@ -9,10 +9,10 @@ namespace UTS_Loan_System
 {
     public class User
     {
-        private int id;
-        private string password, firstname, lastname, usertype;
+        private int id, usertype;
+        private string password, firstname, lastname;
 
-        public User(int id, string password, string firstname, string lastname, string usertype) {            
+        public User(int id, string password, string firstname, string lastname, int usertype) {            
             this.id = id;
             this.password = password;
             this.firstname = firstname;
@@ -35,7 +35,7 @@ namespace UTS_Loan_System
             return firstname + ", " + lastname;
         }
 
-        public string getUsertype()
+        public int getUsertype()
         {
             return usertype;
         }

@@ -11,16 +11,11 @@ using System.Data.SqlClient;
 
 namespace UTS_Loan_System
 {
-    public partial class ReviewApplications : Form
+    public partial class ViewApplications : Form
     {
-        public ReviewApplications()
+        public ViewApplications()
         {
             InitializeComponent();
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             SqlConnection sqlcon = new SqlConnection(@"Data Source=uts-sep-student-loan-system.database.windows.net;Initial Catalog=uts_sep_student_loan_system;Integrated Security=False;User ID=sepadmin;Password=UTSSTUDENT123@;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");//Create connection to the database
             string query = "Select * from Loans;";//Create a SQL query
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);//Execute the above SQL query
@@ -28,15 +23,31 @@ namespace UTS_Loan_System
             try
             {
                 sda.Fill(dtb);
+                dataGridView1.DataSource = dtb;
             }
             catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Connection to Database failed! Please ensure this device is connected to internet!");
-                for (int i = 0; i < 0; i++) {
+                for (int i = 0; i < 0; i++)
+                {
                     dataGridView1.Rows.Add(dtb.Rows[i]);
                 }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

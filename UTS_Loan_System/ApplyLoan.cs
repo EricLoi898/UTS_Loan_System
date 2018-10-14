@@ -53,8 +53,10 @@ namespace UTS_Loan_System
                         catch (SqlException)
                         {
                             MessageBox.Show("Connection to Database failed! Please ensure this device is connected to internet!");
+                            return;
                         }
                         MessageBox.Show("Loan Application Submitted");
+                        this.Close();
                     }
                 }
             }

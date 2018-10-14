@@ -13,30 +13,29 @@ namespace UTS_Loan_System
 {
     public partial class Mainmenu : Form
     {
-        //private DataTable dtb1;
         private User user;
 
         public Mainmenu(User loggedUser)
         {
             InitializeComponent();
             user = loggedUser;
-            label1.Text = loggedUser.getFullname();
+            lbUsername.Text = loggedUser.getFullname();
             switch (loggedUser.getUsertype())
             {
-                case ("Student"):
-                    MessageBox.Show("Student");
+                case (1)://1 is the usertype id of Student type
+                    lbAccess.Text = "Student Access";
                     btnApply.Enabled = btnView.Enabled = true;
                     btnReview.Enabled = false;
                     btnReview.Visible = false;
                     break;
-                case ("Staff Member"):
-                    MessageBox.Show("Staff Member");
+                case (2)://2 is the usertype id of Staff Member type
+                    lbAccess.Text = "Staff Member Access";
                     btnApply.Enabled = btnView.Enabled = false;
                     btnApply.Visible = btnView.Visible = false;
                     btnReview.Enabled = true;
                     break;
-                case ("Staff Manager"):
-                    MessageBox.Show("Staff Manager");
+                case (3)://3 is the usertype id of Staff Manager type
+                    lbAccess.Text = "Staff Manager Access";
                     btnApply.Enabled = btnView.Enabled = false;
                     btnApply.Visible = btnView.Visible = false;
                     btnReview.Enabled = true;
@@ -60,13 +59,14 @@ namespace UTS_Loan_System
 
         private void btnReview_Click(object sender, EventArgs e)
         {
-            ReviewApplications reviewApplications = new ReviewApplications();
+            ViewApplications reviewApplications = new ViewApplications();
             reviewApplications.Show();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-
+            ViewApplications viewApplications = new ViewApplications();
+            viewApplications.Show();
         }
     }
 }
