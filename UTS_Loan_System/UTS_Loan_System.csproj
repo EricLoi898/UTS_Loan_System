@@ -73,6 +73,12 @@
       <DependentUpon>ReviewApplications.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="ViewApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewApplications.Designer.cs">
+      <DependentUpon>ViewApplications.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ApplyLoan.resx">
       <DependentUpon>ApplyLoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="ReviewApplications.resx">
       <DependentUpon>ReviewApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewApplications.resx">
+      <DependentUpon>ViewApplications.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

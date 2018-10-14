@@ -59,7 +59,7 @@ namespace UTS_Loan_System
 
         private void btnReview_Click(object sender, EventArgs e)
         {
-            ViewApplications reviewApplications = new ViewApplications();
+            ReviewApplications reviewApplications = new ReviewApplications();
             reviewApplications.Show();
         }
 
