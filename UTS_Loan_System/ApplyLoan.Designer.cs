@@ -152,7 +152,8 @@
             this.cbbLoantype.FormattingEnabled = true;
             this.cbbLoantype.Items.AddRange(new object[] {
             "Transport",
-            "Tuition Fee"});
+            "Tuition Fee",
+            "Books"});
             this.cbbLoantype.Location = new System.Drawing.Point(294, 231);
             this.cbbLoantype.Name = "cbbLoantype";
             this.cbbLoantype.Size = new System.Drawing.Size(344, 41);

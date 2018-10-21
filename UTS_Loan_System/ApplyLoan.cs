@@ -35,26 +35,38 @@ namespace UTS_Loan_System
             }
             else
             {
-                SqlConnection connection = new SqlConnection(@"Data Source=uts-sep-student-loan-system.database.windows.net;Initial Catalog=uts_sep_student_loan_system;Integrated Security=False;User ID=sepadmin;Password=UTSSTUDENT123@;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO Loans(studentID, loantype, amount,status) VALUES(@studentID, @loantype, @amount, 'submitted')";//Create a SQL query 
-                command.Parameters.AddWithValue("@studentID", lbApplicantID.Text);
-                command.Parameters.AddWithValue("@loantype", cbbLoantype.Text.Trim());
-                command.Parameters.AddWithValue("@amount", tbAmount.Text.Trim());
-                try
+                var confirmResult = MessageBox.Show("Are you sure to submit this application??",
+                                     "Confirm your submission",
+                                     MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
                 {
-                    connection.Open();//Execute the above SQL query
-                    command.ExecuteNonQuery();
+                    SqlConnection sqlcon = new SqlConnection(@"Data Source=uts-sep-student-loan-system.database.windows.net;Initial Catalog=uts_sep_student_loan_system;Integrated Security=False;User ID=sepadmin;Password=UTSSTUDENT123@;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = sqlcon;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "INSERT INTO Loans(studentID, loantype, amount, status, datetime) VALUES(@studentID, @loantype, @amount, 'submitted', @datetime)";//Create a SQL query 
+                    command.Parameters.AddWithValue("@studentID", lbApplicantID.Text);//Add parameters
+                    command.Parameters.AddWithValue("@loantype", cbbLoantype.Text.Trim());
+                    command.Parameters.AddWithValue("@amount", tbAmount.Text.Trim());
+                    command.Parameters.AddWithValue("@datetime", DateTime.Now.ToString());
+                    try
+                    {
+                        sqlcon.Open();//Execute the above SQL query
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Connection to Database failed! Please ensure this device is connected to internet!");
+                        return;
+                    }
+                    MessageBox.Show("Loan Application Submitted");
+                    this.Close();
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Connection to Database failed! Please ensure this device is connected to internet!");
                     return;
                 }
-                MessageBox.Show("Loan Application Submitted");
-                this.Close();
+
             }
 
         }   

@@ -15,12 +15,12 @@ namespace UTS_Loan_System
     {
         private User user;
 
-        public Mainmenu(User loggedUser)
+        public Mainmenu(User user)
         {
             InitializeComponent();
-            user = loggedUser;
-            lbUsername.Text = loggedUser.getFullname();
-            switch (loggedUser.getUsertype())
+            this.user = user;
+            lbUsername.Text = user.getFullname();
+            switch (user.getUsertype())
             {
                 case (1)://1 is the usertype id of Student type
                     lbAccess.Text = "Student Access";
@@ -59,13 +59,13 @@ namespace UTS_Loan_System
 
         private void btnReview_Click(object sender, EventArgs e)
         {
-            ReviewApplications reviewApplications = new ReviewApplications();
+            ReviewApplications reviewApplications = new ReviewApplications(user);
             reviewApplications.Show();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            ViewApplications viewApplications = new ViewApplications();
+            ViewApplications viewApplications = new ViewApplications(user);
             viewApplications.Show();
         }
     }

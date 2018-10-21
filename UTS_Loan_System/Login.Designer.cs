@@ -49,6 +49,7 @@
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(360, 41);
             this.tbID.TabIndex = 0;
+            this.tbID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbID_KeyPress);
             // 
             // tbPW
             // 
@@ -128,7 +129,7 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // Loginpage
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +142,7 @@
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Loginpage";
+            this.Name = "Login";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

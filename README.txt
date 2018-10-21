@@ -5,3 +5,5 @@
 3. Pull the project from the repository.
 4. Open the project file which is in xxx.sln format
 5. Done!
+
+*accessing the database requires the IP address of the user device to be whitelist in the database firewall.

@@ -68,5 +68,10 @@ namespace UTS_Loan_System
                 tbID.Text = tbPW.Text = "";//Clear the textboxes to protect user privacy
             }
         }
+
+        private void tbID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);//Prevent users from typing in non-numberic characters as UTS ID
+        }
     }
 }
