@@ -76,5 +76,11 @@ namespace UTS_Loan_System
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);//Prevent users from typing in non-numberic characters
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AttachDocument attachDocument = new AttachDocument();
+            attachDocument.Show();
+        }
     }
 }

@@ -51,6 +51,12 @@
     <Compile Include="ApplyLoan.Designer.cs">
       <DependentUpon>ApplyLoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttachDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttachDocument.Designer.cs">
+      <DependentUpon>AttachDocument.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="ApplyLoan.resx">
       <DependentUpon>ApplyLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttachDocument.resx">
+      <DependentUpon>AttachDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditApplication.resx">
       <DependentUpon>EditApplication.cs</DependentUpon>

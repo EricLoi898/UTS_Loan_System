@@ -41,12 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.lbApplicantID = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.lbApplicantlastname);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lbApplicantfirstname);
@@ -153,6 +155,7 @@
             this.cbbLoantype.Items.AddRange(new object[] {
             "Transport",
             "Tuition Fee",
+            "Equipment fee",
             "Books"});
             this.cbbLoantype.Location = new System.Drawing.Point(294, 231);
             this.cbbLoantype.Name = "cbbLoantype";
@@ -203,6 +206,18 @@
             this.lbApplicantID.TabIndex = 0;
             this.lbApplicantID.Text = "UTS ID";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(6, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 145);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Attach Supporting Documents";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ApplyLoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -234,5 +249,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbApplicantlastname;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }
